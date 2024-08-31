@@ -6,8 +6,8 @@ import 'package:weather/models/weather_model.dart';
 
 class WeatherInfoBody extends StatelessWidget {
   const WeatherInfoBody({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,14 +28,14 @@ class WeatherInfoBody extends StatelessWidget {
           children: [
             Text(
               weathermodel.city,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 32,
               ),
             ),
             Text(
               'updated at ${weathermodel.date?.hour}:${weathermodel.date?.minute}',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 24,
               ),
             ),
@@ -50,7 +50,7 @@ class WeatherInfoBody extends StatelessWidget {
                 ),
                 Text(
                   weathermodel.temp.round().toString(),
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 32,
                   ),
@@ -59,13 +59,13 @@ class WeatherInfoBody extends StatelessWidget {
                   children: [
                     Text(
                       'Maxtemp:${weathermodel.maxtemp?.round()}',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 16,
                       ),
                     ),
                     Text(
                       'Mintemp:${weathermodel.mintemp?.round()}',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 16,
                       ),
                     ),
@@ -78,7 +78,7 @@ class WeatherInfoBody extends StatelessWidget {
             ),
             Text(
               weathermodel.condition,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 32,
               ),

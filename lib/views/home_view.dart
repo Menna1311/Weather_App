@@ -3,11 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather/cubits/get_weather_cubit/get_weather_cubit.dart';
 import 'package:weather/cubits/get_weather_cubit/get_weather_states.dart';
 import 'package:weather/views/searchscreen.dart';
+import 'package:weather/widgets/failed_body.dart';
 import 'package:weather/widgets/no_weather_body.dart';
 import 'package:weather/widgets/weather_info_body.dart';
 
 class HomeView extends StatefulWidget {
-  const HomeView({Key? key}) : super(key: key);
+  const HomeView({super.key});
 
   @override
   State<HomeView> createState() => _HomeViewState();
@@ -24,22 +25,22 @@ class _HomeViewState extends State<HomeView> {
               onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) {
-                  return Searchscreen();
+                  return const Searchscreen();
                 }));
               },
-              icon: Icon(Icons.search))
+              icon: const Icon(Icons.search))
         ],
       ),
       body: BlocBuilder<GetWeatherCubit, WeatherState>(
         builder: (context, state) {
           if (state is InitialState) {
-            return NoWeatherBody();
+            return const NoWeatherBody();
           } else if (state is Weatherloadedstate) {
-            return WeatherInfoBody();
+            return const WeatherInfoBody();
           } else if (state is Weatherfaildedstate) {
-            return Text('there is an error!');
+            return const FailedBody();
           } else {
-            return CircularProgressIndicator();
+            return const CircularProgressIndicator();
           }
         },
       ),

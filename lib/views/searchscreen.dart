@@ -9,7 +9,7 @@ class Searchscreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Search a city'),
+        title: const Text('Search a city'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -24,10 +24,10 @@ class Searchscreen extends StatelessWidget {
               hintText: 'enter the name of the country',
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16),
-                borderSide: BorderSide(color: Colors.blue),
+                borderSide: const BorderSide(color: Colors.blue),
               ),
               labelText: 'search',
-              suffixIcon: Icon(Icons.search)),
+              suffixIcon: const Icon(Icons.search)),
         ),
       ),
     );

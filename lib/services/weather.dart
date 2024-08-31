@@ -3,11 +3,11 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:weather/models/weather_model.dart';
 
-class weatherService {
+class WeatherService {
   final Dio dio;
   final String baseUrl = 'https://api.weatherapi.com/v1';
   final String apikey = 'b26fa8632c8244c5849214519240208';
-  weatherService(this.dio);
+  WeatherService(this.dio);
   Future<WeatherModel> getweather({required String city}) async {
     try {
       Response response =
