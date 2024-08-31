@@ -40,7 +40,7 @@ class _HomeViewState extends State<HomeView> {
           } else if (state is Weatherfaildedstate) {
             return const FailedBody();
           } else {
-            return const CircularProgressIndicator();
+            return const Center(child: CircularProgressIndicator());
           }
         },
       ),
